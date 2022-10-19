@@ -1,23 +1,33 @@
 /**
  * MATH
- */aeoubhaefobnadpkfgbn
+ */
+
 
 // 1. Pagliacci charges $16.99 for a 13” pizza and $19.99 for a 17” pizza.
 // What is the area for each of these pizzas?
 // (radius would be the listed size - i.e. 13" - divided by 2)
+small_pizza_area = Math.PI * 13/2;
+large_pizza_area = Math.PI * 17/2;
 
 
 // 2. What is the cost per square inch of each pizza?
-
+16.99/small_pizza_area;
+19.99/large_pizza_area;
 
 // 3. Using the Math object, put together a code snippet
 // that allows you to draw a random card with a value
 // between 1 and 13 (assume ace is 1, jack is 11…)
-
+function drawCard()
+    {
+        return 1 + Math.floor(Math.random()*13);
+    }
 
 // 4. Draw 3 cards and use Math to determine the highest
 // card
-
+firstDraw = drawCard();
+secondDraw = drawCard();
+thirdDraw = drawCard();
+Math.max(firstDraw, secondDraw, thirdDraw);
 
 /**
  * ADDRESS LINE
@@ -33,7 +43,7 @@
 // firstName lastName(assume no spaces in either)
 // streetAddress
 // city, state zip(could be spaces in city and state)
-// 
+//
 // Write code that is able to extract the first name from this string into a variable.
 // Hint: use indexOf, slice, and / or substring
 
