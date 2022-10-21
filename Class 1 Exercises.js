@@ -37,6 +37,29 @@ Math.max(firstDraw, secondDraw, thirdDraw);
 // streetAddress, city, state, and zipCode. Use
 // this information to create a formatted address block
 // that could be printed onto an envelope.
+var firstName = String;
+var lastName = String;
+var streetAddress = String;
+var city = String;
+var state = String;
+var zipCode = String;
+
+let formatAddress = (fN, lN, sA, c, s, zC) =>
+{
+  firstName = fN;
+  lastName = lN;
+  streetAddress = sA;
+  city = c;
+  state = s;
+  zipCode = zC;
+  
+  //console.log(firstName + " " + lastName + "\n" + streetAddress + "\n" + city + ", " + state + "\n" + zipCode);
+  return firstName + " " + lastName + '<br>' + streetAddress + '<br>' + city + ", " + state + " " + zipCode;
+  
+}
+
+//test
+formatAddress('John', 'Doe', '5988 33rd ave SW', 'Seattle','WA', 98006);
 
 
 // 2. You are given a string in this format:
@@ -46,6 +69,10 @@ Math.max(firstDraw, secondDraw, thirdDraw);
 //
 // Write code that is able to extract the first name from this string into a variable.
 // Hint: use indexOf, slice, and / or substring
+let addressFormat = formatAddress('firstName', 'lastName', '4003 22nd ave NW', 'Portland', 'OR', '69003');
+var addressArray = String(addressFormat).split(' ');
+let extractFirstName = addressArray[0];
+//console.log(extractFirstName);
 
 
 /**
@@ -58,3 +85,6 @@ Math.max(firstDraw, secondDraw, thirdDraw);
 
 // Starting hint:
 // const endDate = new Date(2019, 3, 1);
+const beginningDate = new Date(2020, 1, 1, 0, 0, 0);
+const endDate = new Date(2020, 4, 1, 0, 0, 0);
+let mDate = new Date((endDate.getTime() + beginningDate.getTime())/2);
