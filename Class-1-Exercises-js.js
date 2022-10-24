@@ -2,17 +2,23 @@
  * MATH
  */
 
+//var testjs = 8;
+//document.getElementById("testjs").innerHTML = testjs;
 
 // 1. Pagliacci charges $16.99 for a 13” pizza and $19.99 for a 17” pizza.
 // What is the area for each of these pizzas?
 // (radius would be the listed size - i.e. 13" - divided by 2)
-small_pizza_area = Math.PI * 13/2;
-large_pizza_area = Math.PI * 17/2;
+var smallPizzaArea = Math.PI * 13/2;
+document.getElementById("smallPizza").innerHTML = smallPizzaArea;
+var largePizzaArea = Math.PI * 17/2;
+document.getElementById("largePizza").innerHTML = largePizzaArea;
 
 
 // 2. What is the cost per square inch of each pizza?
-16.99/small_pizza_area;
-19.99/large_pizza_area;
+var smallPizzaCost = 16.99/smallPizzaArea;
+document.getElementById("smallCost").innerHTML = smallPizzaCost.toFixed(2);
+var largePizzaCost = 19.99/largePizzaArea;
+document.getElementById("largeCost").innerHTML = largePizzaCost.toFixed(2);
 
 // 3. Using the Math object, put together a code snippet
 // that allows you to draw a random card with a value
@@ -24,10 +30,14 @@ function drawCard()
 
 // 4. Draw 3 cards and use Math to determine the highest
 // card
-firstDraw = drawCard();
-secondDraw = drawCard();
-thirdDraw = drawCard();
-Math.max(firstDraw, secondDraw, thirdDraw);
+var firstDraw = drawCard();
+var secondDraw = drawCard();
+var thirdDraw = drawCard();
+var biggestDraw = Math.max(firstDraw, secondDraw, thirdDraw);
+document.getElementById("idoneDraw").innerHTML = firstDraw;
+document.getElementById("idtwoDraw").innerHTML = secondDraw;
+document.getElementById("idthreeDraw").innerHTML = thirdDraw;
+document.getElementById("idbigDraw").innerHTML = biggestDraw;
 
 /**
  * ADDRESS LINE
@@ -52,7 +62,8 @@ let formatAddress = (fN, lN, sA, c, s, zC) =>
   city = c;
   state = s;
   zipCode = zC;
-  
+  const addressString = `${firstName} ${lastName}<br>${streetAddress}<br>${city}, ${state} ${zipCode}`;
+  document.getElementById("idformatAddress").innerHTML = addressString;
   console.log(firstName + " " + lastName + "\n" + streetAddress + "\n" + city + ", " + state + "\n" + zipCode);
   return firstName + " " + lastName + '<br>' + streetAddress + '<br>' + city + ", " + state + " " + zipCode;
   
@@ -88,4 +99,5 @@ console.log(addressArray[0]);
 const beginningDate = new Date(2020, 1, 1, 0, 0, 0);
 const endDate = new Date(2020, 4, 1, 0, 0, 0);
 var midDate = new Date((endDate.getTime() + beginningDate.getTime())/2);
+document.getElementById("middleDate").innerHTML = midDate;
 console.log(midDate);
